@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8em1tx7cogqt"]
+
+[ext_resource type="Script" uid="uid://c6j20a5e4ru25" path="res://_Scenes/Scene/cube.gd" id="1_l0nxo"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_l0nxo"]
+
+[node name="Scene" type="Node3D"]
+
+[node name="ShaderDisplay" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.7071067, -9.6327994e-09, 0.7071065, 0.61237234, 0.49999985, -0.61237216, -0.35355332, 0.86602515, 0.35355306, 0, 0, -3.897315)
+mesh = SubResource("CapsuleMesh_l0nxo")
+script = ExtResource("1_l0nxo")

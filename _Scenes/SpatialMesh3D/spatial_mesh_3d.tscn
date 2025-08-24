@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpoo4n6g5orvd"]
+
+[ext_resource type="QuadMesh" uid="uid://d3erxjakeegyr" path="res://_Scenes/SpatialMesh3D/spatial_mesh_3d.tres" id="1_tp5l7"]
+
+[node name="SpatialMesh3D" type="MeshInstance3D"]
+mesh = ExtResource("1_tp5l7")

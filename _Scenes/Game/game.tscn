@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc8g8ytma23r6"]
+
+[ext_resource type="PackedScene" uid="uid://fj8hvnidln8x" path="res://_Scenes/CameraShader3D/camera_shader_3d.tscn" id="1_3nr3a"]
+[ext_resource type="PackedScene" uid="uid://c8em1tx7cogqt" path="res://_Scenes/Scene/scene.tscn" id="2_ug3pb"]
+
+[node name="Game" type="Node3D"]
+
+[node name="CameraShader3D" parent="." instance=ExtResource("1_3nr3a")]
+current = true
+colors = Array[Color]([Color(0.039215688, 0.06666667, 0.2, 1), Color(0.25882354, 0.23137255, 0.3254902, 1), Color(0.47843137, 0.39607844, 0.4509804, 1), Color(0.69803923, 0.56078434, 0.5764706, 1), Color(0.9137255, 0.72156864, 0.69803923, 1)])
+
+[node name="Scene" parent="." instance=ExtResource("2_ug3pb")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.6540017, 0.7564931, 0, -0.7564931, 0.6540017, 0, 1.5421271, -2.5212321)
+light_energy = 3.067

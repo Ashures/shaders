@@ -1,0 +1,12 @@
+[gd_resource type="QuadMesh" load_steps=3 format=3 uid="uid://d3erxjakeegyr"]
+
+[ext_resource type="Shader" uid="uid://bf0p3lnojtsp4" path="res://_Scenes/SpatialMesh3D/spatial_mesh_3d.gdshader" id="1_rvg7j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0ikaa"]
+render_priority = 0
+shader = ExtResource("1_rvg7j")
+
+[resource]
+material = SubResource("ShaderMaterial_0ikaa")
+flip_faces = true
+size = Vector2(2, 2)

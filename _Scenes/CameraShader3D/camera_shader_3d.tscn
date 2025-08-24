@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://fj8hvnidln8x"]
+
+[ext_resource type="Script" uid="uid://yarsrovhjup0" path="res://_Scenes/CameraShader3D/camera_shader_3d.gd" id="1_a0edu"]
+[ext_resource type="PackedScene" uid="uid://dpoo4n6g5orvd" path="res://_Scenes/SpatialMesh3D/spatial_mesh_3d.tscn" id="1_tm511"]
+[ext_resource type="Shader" uid="uid://bf0p3lnojtsp4" path="res://_Scenes/SpatialMesh3D/spatial_mesh_3d.gdshader" id="2_o5noh"]
+
+[node name="CameraShader3D" type="Camera3D"]
+fov = 37.849285
+script = ExtResource("1_a0edu")
+shader = ExtResource("2_o5noh")
+colors = Array[Color]([Color(0.039215688, 0.06666667, 0.2, 1), Color(0.25882354, 0.23137255, 0.3254902, 1), Color(0.5882353, 0.47843137, 0.5137255, 1), Color(0.9137255, 0.72156864, 0.69803923, 1)])
+
+[node name="SpatialMesh3D" parent="." instance=ExtResource("1_tm511")]
+extra_cull_margin = 1.0
+mesh = null
