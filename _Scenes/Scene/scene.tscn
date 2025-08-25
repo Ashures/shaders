@@ -1,12 +1,38 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8em1tx7cogqt"]
+[gd_scene load_steps=8 format=3 uid="uid://c8em1tx7cogqt"]
 
 [ext_resource type="Script" uid="uid://c6j20a5e4ru25" path="res://_Scenes/Scene/cube.gd" id="1_l0nxo"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2urgb"]
+albedo_color = Color(0.8, 0.8, 0.8, 1)
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_l0nxo"]
+material = SubResource("StandardMaterial3D_2urgb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_11go3"]
+albedo_color = Color(0.8, 0.16, 0.8, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_l0nxo"]
+material = SubResource("StandardMaterial3D_11go3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l0nxo"]
+albedo_color = Color(0.16, 0.8, 0.8, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_l0nxo"]
+material = SubResource("StandardMaterial3D_l0nxo")
 
 [node name="Scene" type="Node3D"]
 
 [node name="ShaderDisplay" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.7071067, -9.6327994e-09, 0.7071065, 0.61237234, 0.49999985, -0.61237216, -0.35355332, 0.86602515, 0.35355306, 0, 0, -3.897315)
 mesh = SubResource("CapsuleMesh_l0nxo")
+script = ExtResource("1_l0nxo")
+
+[node name="ShaderDisplay2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.63574207, 0.14898422, 0.757387, 0.61237234, 0.49999988, -0.61237216, -0.4699275, 0.8531139, 0.22663692, 1.7042944, 0, -6.2479205)
+mesh = SubResource("BoxMesh_l0nxo")
+script = ExtResource("1_l0nxo")
+
+[node name="ShaderDisplay3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.59621257, -8.1221065e-09, 0.5962124, 0.5163352, 0.4215859, -0.51633507, -0.29810628, 0.73020816, 0.29810604, -1.7580221, 0, -6.146901)
+mesh = SubResource("TorusMesh_l0nxo")
 script = ExtResource("1_l0nxo")

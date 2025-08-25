@@ -21,10 +21,10 @@ void fragment() {
 	vec3 color = tex;
 
 	if (linear_depth <= 50.0) {
-		int no_of_colors = light_colors.length();
-		color = light_colors[clamp(floori(relative_luminance(color) * float(no_of_colors)), 0, no_of_colors - 1)];
-
-		color = check_edge_difference(DEPTH_TEXTURE, SCREEN_UV, INV_PROJECTION_MATRIX, color);
+		color = toon_shade(color, 5);
+		color = check_edge_difference(DEPTH_TEXTURE, SCREEN_UV, INV_PROJECTION_MATRIX, color, vec3(1.0), 0.01);
+	} else {
+		color = vec3(0.05, 0.05, 0.11);
 	}
 
 	ALBEDO = color;

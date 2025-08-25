@@ -8,7 +8,7 @@
 fov = 37.849285
 script = ExtResource("1_a0edu")
 shader = ExtResource("2_o5noh")
-colors = Array[Color]([Color(0.039215688, 0.06666667, 0.2, 1), Color(0.25882354, 0.23137255, 0.3254902, 1), Color(0.5882353, 0.47843137, 0.5137255, 1), Color(0.9137255, 0.72156864, 0.69803923, 1)])
+colors = Array[Color]([Color(0.039215688, 0.06666667, 0.2, 1), Color(0.9137255, 0.72156864, 0.69803923, 1)])
 
 [node name="SpatialMesh3D" parent="." instance=ExtResource("1_tm511")]
 extra_cull_margin = 1.0

@@ -13,3 +13,28 @@ int ceili(float value) {
 int floori(float value) {
 	return int(floor(value));
 }
+
+vec3 toon_shade_with_colors(vec3 color, vec3[3] light_colors) {
+	int no_of_colors = 3;
+	return light_colors[clamp(floori(relative_luminance(color) * float(no_of_colors) + 0.5), 0, no_of_colors - 1)];
+}
+
+vec3 toon_shade_with_colors(vec3 color, vec3[5] light_colors) {
+	int no_of_colors = 5;
+	return light_colors[clamp(floori(relative_luminance(color) * float(no_of_colors)), 0, no_of_colors - 1)];
+}
+
+float limit_channel(float channel, int n_colors) {
+	float n = float(n_colors - 1);
+	return floor(channel * n + 0.5) / n;
+}
+
+vec3 toon_shade(vec3 color, int no_of_colors) {
+	vec3 new_color;
+	
+	new_color.r = limit_channel(color.r, no_of_colors);
+	new_color.g = limit_channel(color.g, no_of_colors);
+	new_color.b = limit_channel(color.b, no_of_colors);
+	
+	return new_color;
+}
