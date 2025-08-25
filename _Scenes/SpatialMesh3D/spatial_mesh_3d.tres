@@ -5,7 +5,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0ikaa"]
 render_priority = 0
 shader = ExtResource("1_rvg7j")
-shader_parameter/light_colors = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/background_color = Vector3(0, 0, 0)
 
 [resource]
 material = SubResource("ShaderMaterial_0ikaa")

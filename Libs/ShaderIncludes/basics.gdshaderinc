@@ -25,7 +25,7 @@ float lerp(float a, float b, float t) {
 }
 
 /*
-	USING APPROX. LUMINANCE, SHADE A COLOR TO FIT WITHIN 
+	USING APPROX. LUMINANCE, SHADE A COLOR TO FIT WITHIN
 	PROVIDED COLOR SCHEME.
 */
 vec3 toon_shade_with_colors(vec3 color, vec3[3] light_colors) {
@@ -51,11 +51,5 @@ float limit_channel(float channel, int n_colors) {
 	MAP ORIGINAL CHANNELS TO VALUES SEPARATED BY 1 / n GAPS.
 */
 vec3 toon_shade(vec3 color, int no_of_colors) {
-	vec3 new_color;
-	
-	new_color.r = limit_channel(color.r, no_of_colors);
-	new_color.g = limit_channel(color.g, no_of_colors);
-	new_color.b = limit_channel(color.b, no_of_colors);
-	
-	return new_color;
+	return floor(color * float(no_of_colors - 1) + 0.5) / float(no_of_colors - 1);
 }
