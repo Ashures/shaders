@@ -15,7 +15,7 @@ float linearize_depth(float depth, vec2 screen_uv, mat4 inv_proj) {
 	CHANGE color FROM INPUT TO edge_color IF EDGE IS DETECTED.
 	DO NOTHING IF EDGE IS NOT DETECTED.
 */
-vec3 detect_edge(sampler2D DEPTH_TEXTURE, vec2 screen_uv, mat4 inv_proj, vec3 curr_color, vec3 edge_color, float size) {
+vec3 detect_edge(sampler2D DEPTH_TEXTURE, vec2 screen_uv, mat4 inv_proj, vec3 edge_color, float size) {
 	float n = linearize_depth(texture(DEPTH_TEXTURE, screen_uv + size * vec2(0.0, 1.0)).r, screen_uv + size * vec2(0.0, 1.0), inv_proj);
 	float e = linearize_depth(texture(DEPTH_TEXTURE, screen_uv + size / 2.0 * vec2(1.0, 0.0)).r, screen_uv + size * vec2(1.0, 0.0), inv_proj);
 	float s = linearize_depth(texture(DEPTH_TEXTURE, screen_uv + size * vec2(0.0, -1.0)).r, screen_uv + size * vec2(0.0, -1.0), inv_proj);
@@ -25,5 +25,5 @@ vec3 detect_edge(sampler2D DEPTH_TEXTURE, vec2 screen_uv, mat4 inv_proj, vec3 cu
 	if (n - s > threshold || w - e > threshold || s - n > threshold || e - w > threshold)
 		return edge_color;
 
-	return curr_color;
+	return vec3(-1.0);
 }

@@ -6,8 +6,8 @@ render_mode unshaded, fog_disabled;
 uniform sampler2D DEPTH_TEXTURE: hint_depth_texture;
 uniform sampler2D SCREEN_TEXTURE: hint_screen_texture;
 
-//uniform vec3[5] light_colors;
-uniform vec3 background_color;
+uniform vec4 outline_color;
+uniform float outline_size;
 
 void vertex() {
 	POSITION = vec4(VERTEX.xy, 1.0, 1.0);
@@ -18,18 +18,14 @@ void fragment() {
 	float linear_depth = linearize_depth(depth, SCREEN_UV, INV_PROJECTION_MATRIX);
 
 	vec3 tex = texture(SCREEN_TEXTURE, SCREEN_UV).rgb;
-
 	vec3 color = tex;
-
+	
 	if (linear_depth <= 50.0) {
-		int no_of_colors = 5;
-		color = toon_shade(color, no_of_colors);
-		
-		vec3 edge_color = vec3(1.0);
-		float edge_width = 0.0075;
-		color = detect_edge(DEPTH_TEXTURE, SCREEN_UV, INV_PROJECTION_MATRIX, color, edge_color, edge_width);
-	} else {
-		color = background_color;
+		color = detect_edge(DEPTH_TEXTURE, SCREEN_UV, INV_PROJECTION_MATRIX, outline_color.rgb, outline_size);
+	}
+	
+	if (linear_depth > 50.0 || color == vec3(-1.0)) {
+		discard;
 	}
 
 	ALBEDO = color;

@@ -1,13 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cc8g8ytma23r6"]
+[gd_scene load_steps=7 format=3 uid="uid://cc8g8ytma23r6"]
 
 [ext_resource type="PackedScene" uid="uid://fj8hvnidln8x" path="res://_Scenes/CameraShader3D/camera_shader_3d.tscn" id="1_3nr3a"]
+[ext_resource type="Script" uid="uid://dteu0pabvmar" path="res://Scripts/Resources/custom_shader.gd" id="2_cl16e"]
 [ext_resource type="PackedScene" uid="uid://c8em1tx7cogqt" path="res://_Scenes/Scene/scene.tscn" id="2_ug3pb"]
+[ext_resource type="Resource" uid="uid://b0315f1nxte0j" path="res://Resources/Shaders/toon_05_colors.tres" id="3_0mu45"]
+[ext_resource type="Resource" uid="uid://b8jl8d7ikxaby" path="res://Resources/Shaders/white_outline.tres" id="3_iux0p"]
+[ext_resource type="Resource" uid="uid://dk733dlk8jsik" path="res://Resources/Shaders/background_01.tres" id="4_iux0p"]
 
 [node name="Game" type="Node3D"]
 
 [node name="CameraShader3D" parent="." instance=ExtResource("1_3nr3a")]
-current = true
-background_color = Color(0.16793132, 0.17292628, 0.29581183, 1)
+shaders = Array[ExtResource("2_cl16e")]([ExtResource("4_iux0p"), ExtResource("3_0mu45"), ExtResource("3_iux0p")])
 
 [node name="Scene" parent="." instance=ExtResource("2_ug3pb")]
 

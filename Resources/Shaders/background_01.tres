@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CustomShader" load_steps=3 format=3 uid="uid://dk733dlk8jsik"]
+
+[ext_resource type="Script" uid="uid://dteu0pabvmar" path="res://Scripts/Resources/custom_shader.gd" id="1_leekl"]
+[ext_resource type="Shader" uid="uid://bpdmkudrmktnv" path="res://Libs/Shaders/background.gdshader" id="2_4e0uu"]
+
+[resource]
+script = ExtResource("1_leekl")
+shader_name = "DefaultBackground"
+shader = ExtResource("2_4e0uu")
+settings = {
+"background_color": Color(0.3, 0.34999996, 0.6, 1)
+}
+metadata/_custom_type_script = "uid://dteu0pabvmar"

@@ -38,7 +38,7 @@ vec3 toon_shade_with_colors(vec3 color, vec3[5] light_colors) {
 	return light_colors[clamp(floori(relative_luminance(color) * float(no_of_colors)), 0, no_of_colors - 1)];
 }
 
-
+// DEPRECATED
 float limit_channel(float channel, int n_colors) {
 	float n = float(n_colors - 1);
 	return floor(channel * n + 0.5) / n;
@@ -51,5 +51,9 @@ float limit_channel(float channel, int n_colors) {
 	MAP ORIGINAL CHANNELS TO VALUES SEPARATED BY 1 / n GAPS.
 */
 vec3 toon_shade(vec3 color, int no_of_colors) {
+	return floor(color * float(no_of_colors - 1) + 0.5) / float(no_of_colors - 1);
+}
+
+vec4 toon_shade(vec4 color, int no_of_colors) {
 	return floor(color * float(no_of_colors - 1) + 0.5) / float(no_of_colors - 1);
 }

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CustomShader" load_steps=3 format=3 uid="uid://b8jl8d7ikxaby"]
+
+[ext_resource type="Script" uid="uid://dteu0pabvmar" path="res://Scripts/Resources/custom_shader.gd" id="1_p25j0"]
+[ext_resource type="Shader" uid="uid://bf0p3lnojtsp4" path="res://Libs/Shaders/outline.gdshader" id="2_0h6m4"]
+
+[resource]
+script = ExtResource("1_p25j0")
+shader_name = "WhiteOutline"
+shader = ExtResource("2_0h6m4")
+settings = {
+"outline_color": Color(1, 1, 1, 1),
+"outline_size": 0.00999999999476131
+}
+metadata/_custom_type_script = "uid://dteu0pabvmar"
