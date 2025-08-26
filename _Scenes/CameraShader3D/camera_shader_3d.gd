@@ -22,4 +22,3 @@ func _ready() -> void:
 		new_mesh_instance.mesh = new_mesh
 		new_mesh_instance.material_override = new_material
 		new_mesh_instance.name = shaders[i].shader_name
-		

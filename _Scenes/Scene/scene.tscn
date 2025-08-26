@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://c8em1tx7cogqt"]
 
-[ext_resource type="Script" uid="uid://c6j20a5e4ru25" path="res://_Scenes/Scene/cube.gd" id="1_l0nxo"]
+[ext_resource type="Script" uid="uid://c6j20a5e4ru25" path="res://_Scenes/Scene/spin_object.gd" id="1_l0nxo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2urgb"]
 albedo_color = Color(0.8, 0.8, 0.8, 1)
