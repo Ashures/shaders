@@ -7,6 +7,7 @@ uniform sampler2D DEPTH_TEXTURE: hint_depth_texture;
 uniform sampler2D SCREEN_TEXTURE: hint_screen_texture;
 
 uniform vec4 background_color;
+uniform float effect_dist;
 
 void vertex() {
 	POSITION = vec4(VERTEX.xy, 1.0, 1.0);
@@ -19,7 +20,7 @@ void fragment() {
 	vec3 tex = texture(SCREEN_TEXTURE, SCREEN_UV).rgb;
 	vec3 color = tex;
 	
-	if (linear_depth > 50.0) {
+	if (linear_depth > effect_dist) {
 		color = background_color.rgb;
 	} else {
 		discard;

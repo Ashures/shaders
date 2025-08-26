@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CustomShader" load_steps=3 format=3 uid="uid://c728gcy6rdphh"]
+
+[ext_resource type="Script" uid="uid://dteu0pabvmar" path="res://Scripts/Resources/custom_shader.gd" id="1_sg6pm"]
+[ext_resource type="Shader" uid="uid://cuhfhei20255o" path="res://Libs/Shaders/toon.gdshader" id="2_k6gun"]
+
+[resource]
+script = ExtResource("1_sg6pm")
+shader_name = "Toon"
+shader = ExtResource("2_k6gun")
+settings = {
+"no_of_colors": 7
+}
+metadata/_custom_type_script = "uid://dteu0pabvmar"

@@ -1,6 +1,7 @@
 class_name CameraShader3D extends Camera3D
 
 @onready var shader_parent: Node = $Shaders
+@export var effect_dist: float = 50.0
 @export var shaders: Array[CustomShader]
 
 func _ready() -> void:
@@ -13,6 +14,7 @@ func _ready() -> void:
 		new_material.shader = shaders[i].shader
 		new_material.render_priority = i
 		
+		new_material.set_shader_parameter("effect_dist", effect_dist)
 		for key in shaders[i].settings.keys():
 			new_material.set_shader_parameter(key, shaders[i].settings[key])
 		

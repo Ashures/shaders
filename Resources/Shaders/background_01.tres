@@ -7,6 +7,7 @@
 script = ExtResource("1_leekl")
 shader_name = "DefaultBackground"
 shader = ExtResource("2_4e0uu")
+effect_dist = 50.0
 settings = {
 "background_color": Color(0.3, 0.34999996, 0.6, 1)
 }

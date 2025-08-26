@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CustomShader" load_steps=3 format=3 uid="uid://c764dfhdg00gi"]
+[gd_resource type="Resource" script_class="CustomShader" load_steps=3 format=3 uid="uid://7hklxivd7xes"]
 
 [ext_resource type="Script" uid="uid://dteu0pabvmar" path="res://Scripts/Resources/custom_shader.gd" id="1_5s08o"]
 [ext_resource type="Shader" uid="uid://cuhfhei20255o" path="res://Libs/Shaders/toon.gdshader" id="2_sayia"]
